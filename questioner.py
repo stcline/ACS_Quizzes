@@ -1,8 +1,44 @@
+# This script is a quiz game that asks the user questions about cetacians.
+
+# Import the necessary modules
 import os
 import random
 import keyboard
 import time
 from questions import gray_whale_quiz
+
+# Define the functions
+
+def select_question_bank():
+    print("Select a question bank:")
+    print("1. Gray Whale Quiz")
+    # print("2. Humpback Whale Quiz")
+    # print("3. Blue Whale Quiz")
+    # print("4. Sperm Whale Quiz")
+    # print("5. Beluga Whale Quiz")
+    # print("6. Killer Whale Quiz")
+    # print("7. All Whale Quiz")
+    print("9. Exit")
+    while True:
+        key = keyboard.read_key()
+        if key == '1':
+            return gray_whale_quiz
+        # elif key == '2':
+        #     return humpback_whale_quiz
+        # elif key == '3':
+        #     return blue_whale_quiz
+        # elif key == '4':
+        #     return sperm_whale_quiz
+        # elif key == '5':
+        #     return beluga_whale_quiz
+        # elif key == '6':
+        #     return killer_whale_quiz
+        # elif key == '7':
+        #     return all_whale_quiz
+        # elif key == '8':
+        #     return custom_quiz
+        elif key == '9':
+            return None
 
 def ask_question(question, answer):
     print(question)
@@ -13,13 +49,14 @@ def ask_question(question, answer):
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def run_quiz():
+def run_quiz(quiz):
     correct = 0
     total = 0
+    quiz = quiz
 
     try:
         while True:
-            question, answer = random.choice(list(gray_whale_quiz.items()))
+            question, answer = random.choice(list(quiz.items()))
             ask_question(question, answer)
             
             print("Did you get it right? (Press 'y' for yes or 'n' for no)")
@@ -60,8 +97,10 @@ def run_quiz():
     print("Quiz ended. Thank you for participating!")
     time.sleep(3)
 
+# Run the quiz
 if __name__ == "__main__":
+    quiz = select_question_bank()
     print("Welcome to the Gray Whale Quiz!")
     print("Press SPACE after each question to see the answer.\n")
     time.sleep(2)
-    run_quiz() 
+    run_quiz(quiz) 
