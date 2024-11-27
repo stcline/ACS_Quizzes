@@ -21,6 +21,7 @@ def select_question_bank():
     print("9. Exit")
     while True:
         key = keyboard.read_key()
+        time.sleep(.2)
         if key == '1':
             return gray_whale_quiz
         # elif key == '2':
@@ -39,6 +40,8 @@ def select_question_bank():
         #     return custom_quiz
         elif key == '9':
             return None
+        else:
+            print("Invalid selection. Please try again.")
 
 def ask_question(question, answer):
     print(question)
@@ -100,6 +103,10 @@ def run_quiz(quiz):
 # Run the quiz
 if __name__ == "__main__":
     quiz = select_question_bank()
+    if quiz is None:
+        print("Quiz exited.")
+        time.sleep(3)
+        exit()
     print("Welcome to the Gray Whale Quiz!")
     print("Press SPACE after each question to see the answer.\n")
     time.sleep(2)
