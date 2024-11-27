@@ -107,7 +107,7 @@ if __name__ == "__main__":
         print("Quiz exited.")
         time.sleep(3)
         exit()
-    print("Welcome to the Gray Whale Quiz!")
+    print("Welcome to the Quiz!")
     print("Press SPACE after each question to see the answer.\n")
     time.sleep(2)
     run_quiz(quiz) 
