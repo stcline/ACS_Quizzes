@@ -5,43 +5,43 @@ import os
 import random
 import keyboard
 import time
-from questions import gray_whale_quiz
+from questions import ACS_quiz
 
 # Define the functions
 
-def select_question_bank():
-    print("Select a question bank:")
-    print("1. Gray Whale Quiz")
-    # print("2. Humpback Whale Quiz")
-    # print("3. Blue Whale Quiz")
-    # print("4. Sperm Whale Quiz")
-    # print("5. Beluga Whale Quiz")
-    # print("6. Killer Whale Quiz")
-    # print("7. All Whale Quiz")
-    print("9. Exit")
-    while True:
-        key = keyboard.read_key()
-        time.sleep(.2)
-        if key == '1':
-            return gray_whale_quiz
-        # elif key == '2':
-        #     return humpback_whale_quiz
-        # elif key == '3':
-        #     return blue_whale_quiz
-        # elif key == '4':
-        #     return sperm_whale_quiz
-        # elif key == '5':
-        #     return beluga_whale_quiz
-        # elif key == '6':
-        #     return killer_whale_quiz
-        # elif key == '7':
-        #     return all_whale_quiz
-        # elif key == '8':
-        #     return custom_quiz
-        elif key == '9':
-            return None
-        else:
-            print("Invalid selection. Please try again.")
+# def select_question_bank():
+#     print("Select a question bank:")
+#     print("1. Gray Whale Quiz")
+#     # print("2. Humpback Whale Quiz")
+#     # print("3. Blue Whale Quiz")
+#     # print("4. Sperm Whale Quiz")
+#     # print("5. Beluga Whale Quiz")
+#     # print("6. Killer Whale Quiz")
+#     # print("7. All Whale Quiz")
+#     print("9. Exit")
+#     while True:
+#         key = keyboard.read_key()
+#         time.sleep(.2)
+#         if key == '1':
+#             return gray_whale_quiz
+#         # elif key == '2':
+#         #     return humpback_whale_quiz
+#         # elif key == '3':
+#         #     return blue_whale_quiz
+#         # elif key == '4':
+#         #     return sperm_whale_quiz
+#         # elif key == '5':
+#         #     return beluga_whale_quiz
+#         # elif key == '6':
+#         #     return killer_whale_quiz
+#         # elif key == '7':
+#         #     return all_whale_quiz
+#         # elif key == '8':
+#         #     return custom_quiz
+#         elif key == '9':
+#             return None
+#         else:
+#             print("Invalid selection. Please try again.")
 
 def ask_question(question, answer):
     print(question)
@@ -102,11 +102,11 @@ def run_quiz(quiz):
 
 # Run the quiz
 if __name__ == "__main__":
-    quiz = select_question_bank()
-    if quiz is None:
-        print("Quiz exited.")
-        time.sleep(3)
-        exit()
+    quiz = ACS_quiz
+    # if quiz is None:
+    #     print("Quiz exited.")
+    #     time.sleep(3)
+    #     exit()
     print("Welcome to the Quiz!")
     print("Press SPACE after each question to see the answer.\n")
     time.sleep(2)
